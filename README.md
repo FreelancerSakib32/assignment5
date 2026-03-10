@@ -1,128 +1,52 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
+1️⃣ What is the difference between var, let, and const?
 
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
+Answer:
+var, let, and const are used to declare variables in JavaScript.
 
----
+var is the old way to declare a variable. It is function scoped, which means it can be accessed anywhere inside the function where it is declared. It can also be redeclared and updated.
 
-# Assignment-05: GitHub Issues Tracker
+let is block scoped. That means it only works inside the block where it is declared, like inside a loop or an if statement. It can be updated but cannot be redeclared in the same scope.
 
+const is also block scoped like let. The difference is that const cannot be updated or redeclared after it is assigned a value. It is usually used for values that should not change.
 
-### **API Endpoints:**
-###  **All Issues:** 
-  - https://phi-lab-server.vercel.app/api/v1/lab/issues 
+2️⃣ What is the spread operator (...)?
 
+Answer:
+The spread operator (...) is used to expand or spread elements of an array or object. It allows you to copy, combine, or pass elements easily.
 
-###  **Single Issue:**
-   - https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}
+Example:
+If you have an array [1,2,3] and use ...array, it spreads the values 1,2,3.
 
-   - Example: https://phi-lab-server.vercel.app/api/v1/lab/issue/33
+It is often used to copy arrays, merge arrays, or copy objects without changing the original data.
 
+3️⃣ What is the difference between map(), filter(), and forEach()?
 
-###  **Search Issue:** https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}
+Answer:
+map(), filter(), and forEach() are array methods used to work with array elements.
 
-   - Example:  https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=notifications
+map() is used to create a new array by applying a function to every element of the original array.
 
+filter() is used to create a new array that contains only the elements that pass a specific condition.
 
----
+forEach() is used to run a function for every element in the array, but it does not return a new array.
 
-## 📝 Main Requirements
+4️⃣ What is an arrow function?
 
-## 🎨 Design Part
+Answer:
+An arrow function is a shorter way to write a function in JavaScript. It uses the arrow symbol => instead of the traditional function keyword.
 
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
+It makes the code shorter and cleaner, especially for small functions.
 
-## Main Page: 
+Example:
+Instead of writing function add(a,b){ return a+b } you can write (a,b) => a+b.
 
-### Navbar: 
+5️⃣ What are template literals?
 
-- Navbar with website logo/name on the left
-- Search input and button on the right
+Answer:
+Template literals are a way to write strings in JavaScript using backticks ( ) instead of single or double quotes.
 
-### Tab Section like Figma: 
+They allow you to insert variables or expressions inside a string using ${ }.
 
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
-
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
-
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
-
-
---- 
-
-
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
-
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
-
-- Each card shows:
-  - Title
-  - Description
-  - Status 
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on an issue  card will open a modal and show all the information about that Issue. 
-
-### 🚀 Challenges
-
-
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
-
-- Loading spinner on data load
-
-- Show active button on changing category names
-
-- Implement Search Functionality and 8 meaningful github commit.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
-
-
----
-
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
-
-
-## 📤 What to submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
-
-
+Example:
+If name = "Sakib" then you can write:
+Hello ${name}
