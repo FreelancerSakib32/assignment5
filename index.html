@@ -22,6 +22,90 @@
     </style>
     
 </head>
+<body class="bg-[#f6f8fa] font-sans min-h-screen text-gray-800">
 
+    <div id="login-section" class="h-screen flex items-center justify-center">
+        <div class="card w-96 bg-white shadow-xl p-8 border border-gray-200">
+            <div class="flex flex-col items-center">
+                <img src="./assets/github-logo.png" alt="Logo" class="w-16 h-16 mb-4">
+                <h2 class="text-2xl font-bold">Sign In</h2>
+                <p class="text-gray-500 mb-6 text-sm">Welcome to GitHub Issues Tracker</p>
+            </div>
+
+            <div class="form-control w-full mb-4">
+                <label class="label"><span class="label-text font-bold text-gray-700">Username</span></label>
+                <input type="text" id="username" placeholder="Enter admin" class="input input-bordered w-full bg-gray-50 focus:bg-white" />
+            </div>
+
+            <div class="form-control w-full mb-6">
+                <label class="label"><span class="label-text font-bold text-gray-700">Password</span></label>
+                <input type="password" id="password" placeholder="Enter admin123" class="input input-bordered w-full bg-gray-50 focus:bg-white" />
+            </div>
+
+            <button id="login-btn" class="btn bg-[#2da44e] hover:bg-[#2c974b] text-white w-full border-none">Sign In</button>
+            
+            <div class="bg-gray-50 p-4 rounded-lg text-sm text-center border mt-4">
+                <p class="font-bold mb-1">Demo Credentials:</p>
+                <p>Username: <span class="text-blue-600 font-semibold">admin</span></p>
+                <p>Password: <span class="text-blue-600 font-semibold">admin123</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard-section" class="hidden">
+        
+        <div class="navbar bg-white shadow-sm px-6 py-3 border-b border-gray-200">
+            <div class="flex-1 flex items-center gap-3">
+                <img src="./assets/github-logo.png" alt="Logo" class="w-8 h-8 opacity-90">
+                <a class="text-xl font-bold text-gray-900">Issues Tracker</a>
+            </div>
+            <div class="flex-none gap-3">
+                <div class="form-control relative">
+                    <input type="text" id="search-input" placeholder="Search issues..." class="input input-sm input-bordered w-64 bg-gray-50" />
+                    <button id="search-btn" class="btn btn-sm absolute right-0 rounded-l-none bg-gray-200 border-gray-300">Search</button>
+                </div>
+                <button id="logout-btn" class="btn btn-sm btn-outline btn-error">Logout</button>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 py-8">
+            
+            <div class="flex justify-center mb-8">
+                <div class="join border border-gray-300 rounded-lg">
+                    <button class="join-item btn btn-sm tab-btn bg-white hover:bg-gray-100 border-none px-6" data-tab="all">All</button>
+                    <button class="join-item btn btn-sm tab-btn bg-white hover:bg-gray-100 border-none px-6" data-tab="open">Open</button>
+                    <button class="join-item btn btn-sm tab-btn bg-white hover:bg-gray-100 border-none px-6" data-tab="closed">Closed</button>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-6">
+                <div class="flex items-center gap-3 text-gray-700">
+                    <img src="./assets/Aperture.png" class="w-5 h-5 opacity-70">
+                    <span id="issue-count" class="font-bold text-lg">0</span>
+                    <span class="text-sm font-medium">Issues found</span>
+                </div>
+                <div class="flex gap-6 text-sm font-semibold text-gray-600">
+                    <div class="flex items-center gap-2"><img src="./assets/Open-Status.png" class="w-4 h-4"> Open</div>
+                    <div class="flex items-center gap-2"><img src="./assets/Closed- Status .png" class="w-4 h-4"> Closed</div>
+                </div>
+            </div>
+
+            <div id="loading-spinner" class="hidden text-center py-16">
+                <div class="loader"></div>
+                <p class="mt-4 text-gray-500 font-medium">Loading issues...</p>
+            </div>
+
+            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-12">
+                </div>
+        </div>
+
+        <dialog id="issue_modal" class="modal">
+            <div class="modal-box w-11/12 max-w-2xl bg-white rounded-xl">
+                <div id="modal-content"></div>
+            </div>
+        </dialog>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
