@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
     <style>
         .loader {
             border: 4px solid #f3f3f3;
@@ -20,16 +19,15 @@
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
-    
 </head>
-<body class="bg-[#f6f8fa] font-sans min-h-screen text-gray-800">
+<body class="bg-[#f6f8fa] font-sans min-h-screen text-gray-800 overflow-x-hidden">
 
-    <div id="login-section" class="h-screen flex items-center justify-center">
-        <div class="card w-96 bg-white shadow-xl p-8 border border-gray-200">
+    <div id="login-section" class="h-screen flex items-center justify-center px-4">
+        <div class="card w-full max-w-sm sm:max-w-md bg-white shadow-xl p-6 sm:p-8 border border-gray-200">
             <div class="flex flex-col items-center">
-                <img src="./assets/github-logo.png" alt="Logo" class="w-16 h-16 mb-4">
-                <h2 class="text-2xl font-bold">Sign In</h2>
-                <p class="text-gray-500 mb-6 text-sm">Welcome to GitHub Issues Tracker</p>
+                <img src="./assets/github-logo.png" alt="Logo" class="w-14 h-14 sm:w-16 sm:h-16 mb-4">
+                <h2 class="text-xl sm:text-2xl font-bold">Sign In</h2>
+                <p class="text-gray-500 mb-6 text-xs sm:text-sm text-center">Welcome to GitHub Issues Tracker</p>
             </div>
 
             <div class="form-control w-full mb-4">
@@ -54,37 +52,37 @@
 
     <div id="dashboard-section" class="hidden">
         
-        <div class="navbar bg-white shadow-sm px-6 py-3 border-b border-gray-200">
-            <div class="flex-1 flex items-center gap-3">
-                <img src="./assets/github-logo.png" alt="Logo" class="w-8 h-8 opacity-90">
-                <a class="text-xl font-bold text-gray-900">Issues Tracker</a>
+        <div class="navbar bg-white shadow-sm px-4 sm:px-6 py-3 border-b border-gray-200 flex flex-col sm:flex-row gap-3 sm:gap-0">
+            <div class="flex-1 flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto">
+                <img src="./assets/github-logo.png" alt="Logo" class="w-7 h-7 sm:w-8 sm:h-8 opacity-90">
+                <a class="text-lg sm:text-xl font-bold text-gray-900">Issues Tracker</a>
             </div>
-            <div class="flex-none gap-3">
-                <div class="form-control relative">
-                    <input type="text" id="search-input" placeholder="Search issues..." class="input input-sm input-bordered w-64 bg-gray-50" />
+            <div class="flex-none flex w-full sm:w-auto gap-2 items-center">
+                <div class="form-control relative flex-1 sm:w-64">
+                    <input type="text" id="search-input" placeholder="Search issues..." class="input input-sm input-bordered w-full bg-gray-50 pr-16" />
                     <button id="search-btn" class="btn btn-sm absolute right-0 rounded-l-none bg-gray-200 border-gray-300">Search</button>
                 </div>
                 <button id="logout-btn" class="btn btn-sm btn-outline btn-error">Logout</button>
             </div>
         </div>
 
-        <div class="container mx-auto px-6 py-8">
+        <div class="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
             
-            <div class="flex justify-center mb-8">
+            <div class="flex justify-center mb-6 sm:mb-8">
                 <div class="join border border-gray-300 rounded-lg">
-                    <button class="join-item btn btn-sm tab-btn bg-white hover:bg-gray-100 border-none px-6" data-tab="all">All</button>
-                    <button class="join-item btn btn-sm tab-btn bg-white hover:bg-gray-100 border-none px-6" data-tab="open">Open</button>
-                    <button class="join-item btn btn-sm tab-btn bg-white hover:bg-gray-100 border-none px-6" data-tab="closed">Closed</button>
+                    <button class="join-item btn btn-sm sm:btn-md tab-btn bg-white hover:bg-gray-100 border-none px-4 sm:px-6 text-xs sm:text-sm" data-tab="all">All</button>
+                    <button class="join-item btn btn-sm sm:btn-md tab-btn bg-white hover:bg-gray-100 border-none px-4 sm:px-6 text-xs sm:text-sm" data-tab="open">Open</button>
+                    <button class="join-item btn btn-sm sm:btn-md tab-btn bg-white hover:bg-gray-100 border-none px-4 sm:px-6 text-xs sm:text-sm" data-tab="closed">Closed</button>
                 </div>
             </div>
 
-            <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center bg-white p-4 rounded-lg shadow-sm border border-gray-200 mb-6 gap-3 sm:gap-0">
                 <div class="flex items-center gap-3 text-gray-700">
-                    <img src="./assets/Aperture.png" class="w-5 h-5 opacity-70">
+                    <img src="./assets/github-logo.png" class="w-5 h-5 opacity-70">
                     <span id="issue-count" class="font-bold text-lg">0</span>
                     <span class="text-sm font-medium">Issues found</span>
                 </div>
-                <div class="flex gap-6 text-sm font-semibold text-gray-600">
+                <div class="flex gap-4 sm:gap-6 text-sm font-semibold text-gray-600">
                     <div class="flex items-center gap-2"><img src="./assets/Open-Status.png" class="w-4 h-4"> Open</div>
                     <div class="flex items-center gap-2"><img src="./assets/Closed- Status .png" class="w-4 h-4"> Closed</div>
                 </div>
@@ -95,12 +93,12 @@
                 <p class="mt-4 text-gray-500 font-medium">Loading issues...</p>
             </div>
 
-            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-12">
+            <div id="issues-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-12">
                 </div>
         </div>
 
-        <dialog id="issue_modal" class="modal">
-            <div class="modal-box w-11/12 max-w-2xl bg-white rounded-xl">
+        <dialog id="issue_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box w-full sm:w-11/12 max-w-2xl bg-white rounded-t-2xl sm:rounded-xl">
                 <div id="modal-content"></div>
             </div>
         </dialog>
